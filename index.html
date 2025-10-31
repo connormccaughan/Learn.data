@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn.data</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sql.js@1.10.3/dist/sql-wasm.js"></script>
+    <style>
+      :root {
+        /* Default theme, will be overridden by JS */
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --bg-tertiary: #334155;
+        --bg-content: #ffffff;
+        --bg-accent-primary: #3b82f6;
+        --bg-accent-primary-hover: #2563eb;
+        --bg-success: #16a34a;
+        --bg-error: #dc2626;
+        --bg-warning: #f59e0b;
+        --text-primary: #e2e8f0;
+        --text-secondary: #94a3b8;
+        --text-tertiary: #64748b;
+        --text-content-primary: #1e293b;
+        --text-content-secondary: #475569;
+        --text-on-accent: #ffffff;
+        --text-success: #22c55e;
+        --text-error: #ef4444;
+        --text-warning: #f59e0b;
+        --border-primary: #334155;
+        --border-secondary: #475569;
+        --border-content: #e2e8f0;
+        --scrollbar-track: #1e293b;
+        --scrollbar-thumb: #475569;
+        --scrollbar-thumb-hover: #64748b;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      /* Custom scrollbar for a cleaner look */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--scrollbar-track);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-thumb);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--scrollbar-thumb-hover);
+      }
+    </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bg-primary': 'var(--bg-primary)',
+            'bg-secondary': 'var(--bg-secondary)',
+            'bg-tertiary': 'var(--bg-tertiary)',
+            'bg-content': 'var(--bg-content)',
+            'accent-primary': 'var(--bg-accent-primary)',
+            'accent-primary-hover': 'var(--bg-accent-primary-hover)',
+            'success': 'var(--bg-success)',
+            'error': 'var(--bg-error)',
+            'warning': 'var(--bg-warning)',
+            'text-primary': 'var(--text-primary)',
+            'text-secondary': 'var(--text-secondary)',
+            'text-tertiary': 'var(--text-tertiary)',
+            'text-content-primary': 'var(--text-content-primary)',
+            'text-content-secondary': 'var(--text-content-secondary)',
+            'text-on-accent': 'var(--text-on-accent)',
+            'text-success': 'var(--text-success)',
+            'text-error': 'var(--text-error)',
+            'text-warning': 'var(--text-warning)',
+            'border-primary': 'var(--border-primary)',
+            'border-secondary': 'var(--border-secondary)',
+            'border-content': 'var(--border-content)',
+          }
+        }
+      }
+    }
+  </script>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "webr": "https://webr.r-wasm.org/v0.3.2/webr.mjs"
+  }
+}
+</script>
+</head>
+  <body class="bg-bg-secondary text-text-primary">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
